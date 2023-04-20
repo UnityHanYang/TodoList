@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>TO-DO List</title>
+    <style>
+        /* CSS 스타일 */
+        * {
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .todo-input {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .todo-input input[type="text"] {
+            border: none;
+            border-bottom: 2px solid #333;
+            font-size: 16px;
+            margin-right: 10px;
+            padding: 5px;
+            width: 80%;
+        }
+
+        .todo-input button[type="submit"] {
+            background-color: #333;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            font-size: 16px;
+            padding: 5px 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            margin-top: 50px;
+            text-align: center;
+            padding: 0;
+            width: 40%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        li {
+            padding: 10px;
+            font-size: 16px;
+            border-bottom: 1px solid #ccc;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        li:last-child {
+            border-bottom: none;
+        }
+
+        .delete-button {
+            background-color: #f44336;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .delete-button:hover {
+            background-color: #ff7f7f;
+        }
+
+        #entirede {
+            background-color: #333;
+            color: #fff;
+            cursor: pointer;
+            font-size: 16px;
+            padding: 5px 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #logout {
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<div>
+    <div class="header">
+        <h1>TO-DO LIST</h1>
+        <button id="logout">로그아웃</button>
+    </div>
+    <form id="todo-form">
+        <div class="todo-input">
+            <input type="text" id="todo-input" placeholder="할 일을 입력하세요" />
+            <button type="submit">추가</button>
+        </div>
+    </form>
+    <div style=" text-align: center;">
+        <button id="entirede" style=" display: inline-block;">전체 삭제</button>
+    </div>
+        <ul id="todo-items">
+        </ul>
+    </div>
+</body>
+<script>
+    const form = document.getElementById('todo-form');
+    const input = document.getElementById('todo-input');
+    const list = document.getElementById('todo-items');
+    const logout = document.querySelector('#logout');
+    const entirede = document.querySelector('#entirede');
+
+    let i = 1;
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        const value = input.value.trim();
+        if (value !== '') {
+            const li = document.createElement('li');
+            li.innerHTML = "<span>"+i+"</span>"+ value + "<button class='delete-button'>Delete</button>";
+            list.appendChild(li);
+            input.value = '';
+        }
+        i++;
+    });
+
+    list.addEventListener('click', function (event) {
+        if (event.target.classList.contains('delete-button')) {
+            event.target.parentNode.remove();
+        }
+    });
+    entirede.addEventListener('click', function (event) {
+        list.innerHTML = '';
+    });
+    logout.addEventListener('click', () => {
+        window.location.href = 'index.html';
+    });
+</script>
+
+</html>

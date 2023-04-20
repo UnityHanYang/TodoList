@@ -1,0 +1,153 @@
+/* General Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  background-color: #f8f8f8;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* Header Styles */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+header button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: none;
+  background-color: #f44336;
+  color: #fff;
+  cursor: pointer;
+}
+
+header button:hover {
+  background-color: #d32f2f;
+}
+
+/* Todo List Styles */
+.todo-list {
+  margin: 40px 0;
+  border-collapse: collapse;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.todo-list thead {
+  background-color: #f2f2f2;
+}
+
+.todo-list thead th {
+  text-align: left;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.todo-list tbody td {
+  text-align: left;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+}
+
+.todo-list tbody td input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.todo-list tbody td .delete-todo {
+  color: #f44336;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.todo-list tbody td .delete-todo:hover {
+  text-decoration: underline;
+}
+
+/* Form Styles */
+form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+form input[type="text"] {
+  width: 75%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #f2f2f2;
+  font-size: 1rem;
+}
+
+form button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: none;
+  background-color: #4caf50;
+  color: #fff;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #388e3c;
+}
+
+/* Stats Styles */
+.stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.stats p {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.stats span {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.stats span.incomplete {
+  color: #f44336;
+}
+
+.stats span.complete {
+  color: #4caf50;
+}
+
+/* Buttons Styles */
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+/* .buttons button { */
+  
